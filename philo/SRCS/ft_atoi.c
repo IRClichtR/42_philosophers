@@ -1,18 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 16:56:46 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/07/11 16:56:47 by ftuernal         ###   ########.fr       */
+/*   Created: 2023/07/12 10:33:35 by ftuernal          #+#    #+#             */
+/*   Updated: 2023/07/12 10:33:37 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
 
-void	ft_print_fd(char *str, int fd)
+int	ft_atoi(char *nptr)
 {
-	write(fd, str, ft_strlen(str));
+	int		i;
+	long	res;
+	int		sign;
+
+	i = 0;
+	sign = 1;
+	res = 0;
+	while (nptr[i] == ' ' || nptr[i] == '\t'
+		|| nptr[i] == '\n' || nptr[i] == '\v'
+		|| nptr[i] == '\f' || nptr[i] == '\r')
+		i++;
+	if (nptr[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = (res * 10) + (nptr[i] - 48);
+		i++;
+	}
+	return (res * sign);
 }

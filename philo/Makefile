@@ -1,0 +1,33 @@
+NAME		= philo
+
+SRCS		= $(addprefix SRCS/, ft_atoi.c  ft_print.c  ft_strlen.c  main.c)
+
+OBJS_DIR	= OBJS
+
+OBJS		= $(addprefix $(OBJS_DIR)/, $(patsubst %.c, %.o, $(notdir $(SRCS))))
+
+CC			= cc -O0
+
+CFLAGS		= -g -Werror -Wextra -Wall -pthread
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
+
+$(OBJS_DIR)/%.o:*/%.c
+	mkdir -p $(OBJS_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+re: fclean all
+
+clean:
+	rm -rf $(OBJS_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+norme:
+	norminette $(SRCS)
+
+.PHONY: all clean fclean re
