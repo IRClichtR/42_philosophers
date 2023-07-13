@@ -34,5 +34,4 @@ t_philo	*init_experiment(char **av)
 	}
 	else
 		cond->round_nb = -1;
-	return (cond);
 }

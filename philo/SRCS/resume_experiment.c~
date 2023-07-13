@@ -16,10 +16,7 @@ void	routine()
 {
 	static int	i = 0;
 	if (i == 0)
-	{
-		printf(" ----- PHILOSOPHERS ENTER THE ROOM ----- \n");
 		printf("[%d] no one shall enter if they are not geometrician!\n", i);
-	}
 	if (i == 1)
 		printf("[%d] I love sodomy!\n", i);
 	if (i > 1)
