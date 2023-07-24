@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:37:55 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/07/12 15:16:12 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/07/24 16:47:05 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@ int main(int ac, char **av)
 {
 	t_philo *conditions;
 
-	if (ac > 5 || ac < 4 || ft_atoi(av[1]) < 1)
+	if (ac > 6 || ac < 4 || ft_atoi(av[1]) < 1)
 	{
 		display_error();
 		return(0);
 	}
-	conditions = init_experiment(av);
+	conditions = malloc(sizeof(t_philo));
+	init_experiment(av);
 	if (conditions == NULL)
 	{
 		display_error();

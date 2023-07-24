@@ -1,7 +1,7 @@
 NAME		= philo
 
 SRCS		= $(addprefix SRCS/, ft_atoi.c ft_strlen.c  main.c resume_experiment.c \
-ft_print.c init_experiment.c )
+ft_print.c init_experiment.c get_time.c go_sleep.c)
 
 OBJS_DIR	= OBJS
 
