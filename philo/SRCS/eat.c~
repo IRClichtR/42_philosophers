@@ -14,7 +14,6 @@
 
 void	eat()
 {
-	
 	if (get_time() <= time_to_die && (l_fork && r_fork))
 	{
 		take_fork(l_fork);

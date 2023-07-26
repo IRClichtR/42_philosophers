@@ -12,13 +12,34 @@
 
 #include "philosopher.h"
 
-void	*roll_dice()
+void	*monitor()
 {
-	int	value = (rand() % 6) + 1;
-	int	*result = malloc(sizeof(int));
-	*result = value;
-	printf("%d\n", value);
-	return((void *)result);
+	if (finish == nb_thinker)
+		return (/*END OF EXPERIMENT*/);
+}
+
+void	*life_of_a_philosopher(/*argument*/)
+{
+	// set up time to die
+	// set up time to sleep
+	// if l_fork available && r_fork available
+	//		then initiate eating process
+	// else think
+	time_to_die = get_time() + time_to_die_param;
+	while (get_time() <= time_to_die && rounds > 0)
+	{
+		if (l_fork && r_fork)
+			if (eat() == -1)
+				return (/*DEATH*/);
+		else
+			if (think_sleep() == -1)
+				return (/*DEATH*/);;
+		round--;
+	}
+	if (round == 0)
+		return (/*FINISHED*/);
+	else
+		return (/*DEATH*/);
 }
 
 void	resume_experiment(t_philo *cond)
