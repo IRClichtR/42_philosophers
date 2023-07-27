@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 16:58:45 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/07/11 16:58:46 by ftuernal         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "philosopher.h"
-
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
+	char	*str;
 
+	str = (char *)s;
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 		i++;
-	return(i);
+	return (i);
 }

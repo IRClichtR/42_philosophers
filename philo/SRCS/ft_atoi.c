@@ -1,18 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 10:33:35 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/07/12 10:33:37 by ftuernal         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "philosopher.h"
-
-int	ft_atoi(char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	long	res;
@@ -34,7 +20,7 @@ int	ft_atoi(char *nptr)
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		res = (res * 10) + (nptr[i] - 48);
+		res = (res * 10) + ((nptr[i]) - 48);
 		i++;
 	}
 	return (res * sign);
