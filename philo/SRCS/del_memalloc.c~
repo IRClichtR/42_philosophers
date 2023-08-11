@@ -1,0 +1,8 @@
+#include "philo.h"
+
+void	del_memalloc(t_data *data)
+{
+	if (data->philo)
+		free(data->philo);
+	pthread_mutex_destroy(&data->death_lock);
+}
