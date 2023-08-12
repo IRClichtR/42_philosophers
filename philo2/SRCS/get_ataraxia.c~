@@ -9,10 +9,7 @@ static void	*socrates_watch(void *arg)
 	{
 		pthread_mutex_lock(&think->lock);
 		if (get_time() >= think->death_end && think->eating == 0)
-		{
 			display_status("DEAD", think);
-			think->data->waisted = 1;
-		}
 		if (think->eat_count == think->data->round_nb)
 		{
 			pthread_mutex_lock(&think->data->lock);

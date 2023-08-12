@@ -14,7 +14,7 @@ static void unlock_1_chop(t_philo *think, int lock_left, int lock_right)
 		display_status("FORK", think);
 		pthread_mutex_unlock(think->l_chop);
 	}
-	if (lock_right == 0)
+	else if (lock_right == 0)
 	{
 		display_status("FORK", think);
 		pthread_mutex_unlock(think->r_chop);
