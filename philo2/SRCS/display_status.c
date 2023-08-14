@@ -6,13 +6,13 @@ void	display_status(char *status, t_philo *think)
 
 	time = get_time() - think->data->start_time;
 	pthread_mutex_lock(&think->data->write);
-	if (ft_strncmp("FORK", status, 4) == 0 /*&& think->data->waisted == 0*/)
+	if (ft_strncmp("FORK", status, 4) == 0 && think->status != -1)
 		printf("%llu ms [%d] has taken a fork\n", time, think->think_id);
-	else if (ft_strncmp("EAT", status, 3) == 0 /*&& think->data->waisted == 0*/)
+	else if (ft_strncmp("EAT", status, 3) == 0 && think->status != -1)
 		printf("%llu ms [%d] is eating\n", time, think->think_id);
-	else if (ft_strncmp("SLEEP", status, 5) == 0 /*&& think->data->waisted == 0*/)
+	else if (ft_strncmp("SLEEP", status, 5) == 0 && think->status != -1)
 		printf("%llu ms [%d] is sleeping\n", time, think->think_id);
-	else if (ft_strncmp("THINK", status, 5) == 0 /*&& think->data->waisted == 0*/)
+	else if (ft_strncmp("THINK", status, 5) == 0 && think->status != -1)
 		printf("%llu ms [%d] is thinking\n", time, think->think_id);
 	else if (ft_strncmp("DEAD", status, 4) == 0)
 		printf("%llu ms [%d] died\n", time, think->think_id);

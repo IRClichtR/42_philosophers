@@ -13,6 +13,7 @@ static void	*socrates_watch(void *arg)
 		{
 			display_status("DEAD", think);
 			think->data->waisted = 1;
+			think->status = -1;
 		}
 		if (think->eat_count == think->data->round_nb)
 		{
