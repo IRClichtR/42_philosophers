@@ -34,6 +34,7 @@ int	do_multiple_thinkers(t_data *data)
 		if (pthread_create(&data->tid[i], NULL, &get_ataraxia,\
 			&data->think[i]) != 0)
 			return (str_error("Error: thinker thread creation error", data));
+		go_sleep(1);
 		i++;
 	}
 	i = 0;

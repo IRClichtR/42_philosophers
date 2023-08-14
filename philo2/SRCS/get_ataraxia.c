@@ -8,7 +8,8 @@ static void	*socrates_watch(void *arg)
 	while (think->data->waisted == 0)
 	{
 		pthread_mutex_lock(&think->lock);
-		if (get_time() >= think->death_end && think->eating == 0)
+		if (get_time() >= think->death_end && think->eating == 0 
+			&& think->data->waisted == 0)
 		{
 			display_status("DEAD", think);
 			think->data->waisted = 1;
