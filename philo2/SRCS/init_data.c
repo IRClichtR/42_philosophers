@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_data.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/16 11:47:51 by ftuernal          #+#    #+#             */
+/*   Updated: 2023/08/17 10:30:17 by ftuernal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 static int	struct_alloc(t_data *data)
@@ -26,12 +38,11 @@ static void	fork_init(t_data *data)
 	}
 	data->think[0].l_chop = &data->chopstick[0];
 	data->think[0].r_chop = &data->chopstick[data->think_nb - 1];
-	i = 1;
-	while (i < data->think_nb)
+	i = 0;
+	while (++i < data->think_nb)
 	{
 		data->think[i].l_chop = &data->chopstick[i];
 		data->think[i].r_chop = &data->chopstick[i - 1];
-		i++;
 	}
 }
 
@@ -63,13 +74,15 @@ static int	init_conditions(t_data *data, char **av, int ac)
 		data->round_nb = ft_atoi(av[5]);
 	else
 		data->round_nb = -1;
-	if (data->think_nb < 1 || data->death_time < 0 || data->eat_time < 0 
+	if (data->think_nb < 1 || data->death_time < 0 || data->eat_time < 0
 		|| data->sleep_time < 0)
 		return (str_error("Error: Bad arguments!\n", data), -1);
 	data->waisted = 0;
 	data->finish = 0;
 	pthread_mutex_init(&data->write, NULL);
 	pthread_mutex_init(&data->lock, NULL);
+	pthread_mutex_init(&data->death_lock, NULL);
+	pthread_mutex_init(&data->finish_lock, NULL);
 	return (0);
 }
 

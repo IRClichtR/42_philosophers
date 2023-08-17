@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/16 11:48:51 by ftuernal          #+#    #+#             */
+/*   Updated: 2023/08/17 10:29:46 by ftuernal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -9,7 +21,7 @@
 # include <sys/time.h>
 # include <stdint.h>
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	struct s_data	*data;
 	pthread_t		t1;
@@ -23,7 +35,7 @@ typedef struct	s_philo
 	pthread_mutex_t	*r_chop;
 }				t_philo;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	pthread_t		*tid;
 	t_philo			*think;
@@ -38,9 +50,13 @@ typedef struct	s_data
 	pthread_mutex_t	*chopstick;
 	pthread_mutex_t	write;
 	pthread_mutex_t	lock;
+	pthread_mutex_t	death_lock;
+	pthread_mutex_t	finish_lock;
 }				t_data;
 
 int			check_av(char **av);
+int			check_death(t_philo *think);
+int			check_finish(t_philo *think);
 void		del_malloc(t_data *data);
 void		display_status(char *status, t_philo *think);
 int			do_1th(t_data *data);
@@ -55,5 +71,5 @@ uint64_t	get_time(void);
 int			go_sleep(useconds_t time);
 int			init_data(t_data *data, int ac, char **av);
 void		search_for_truth(t_philo *think);
-int			str_error(char *str, t_data * data);
+int			str_error(char *str, t_data *data);
 #endif

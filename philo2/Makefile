@@ -1,8 +1,8 @@
 NAME		= philo
 
 SRCS		= $(addprefix SRCS/, \
-check_av.c         eat.c              get_ataraxia.c     main.c \
-del_malloc.c       ft_atoi.c          get_time.c         do_multiple_thinkers.c\
+check_av.c         check_death.c      eat.c              get_ataraxia.c          main.c \
+del_malloc.c       ft_atoi.c          get_time.c         check_finish.c          do_multiple_thinkers.c\
 display_status.c   ft_strlen.c        go_sleep.c         search_for_truth.c \
 do_1th.c           ft_strncmp.c       init_data.c        str_error.c)
 
@@ -12,7 +12,7 @@ OBJS		= $(addprefix $(OBJS_DIR)/, $(patsubst %.c, %.o, $(notdir $(SRCS))))
 
 CC			= cc -O0
 
-CFLAGS		= -g -Werror -Wextra -Wall -pthread
+CFLAGS		= -g3 -Werror -Wextra -Wall -pthread -fsanitize=thread
 
 all: $(NAME)
 
