@@ -1,0 +1,8 @@
+2 410 200 200
+3 620 200 200
+5 800 200 200
+5 800 200 200 7
+4 410 200 200
+200 150 60 60
+-fsanitize=thread
+ou valgrind -tools=helgrind chercher data race
