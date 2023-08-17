@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:03 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 09:31:19 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:31:38 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	*socrates_watch(void *arg)
 	{
 		pthread_mutex_lock(&think->lock);
 		if (get_time() >= think->death_end && think->eating == 0
-			&& think->data->waisted == 0)
+			&& check_death(think) == 0)
 		{
 			display_status("DEAD", think);
 			pthread_mutex_lock(&think->data->death_lock);

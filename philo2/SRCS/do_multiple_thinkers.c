@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:45:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 12:07:53 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/17 13:24:34 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	do_multiple_thinkers(t_data *data)
 		if (pthread_create(&data->tid[i], NULL, &get_ataraxia, \
 			&data->think[i]) != 0)
 			return (str_error("Error: thinker thread creation error", data));
+//		go_sleep(1);
 	}
 	i = -1;
 	while (++i < data->think_nb)
