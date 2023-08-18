@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 10:01:25 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 14:54:42 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <stdint.h>
+
+enum type_print
+{
+	THINK = 1,
+	EAT = 2,
+	SLEEP = 3,
+	FORK = 4,
+	DIED = 0
+};
 
 typedef struct s_philo
 {
@@ -52,6 +61,7 @@ typedef struct s_data
 	pthread_mutex_t	write;
 	pthread_mutex_t	death_lock;
 	pthread_mutex_t	finish_lock;
+	pthread_mutex_t	time_lock;
 }				t_data;
 
 int			check_av(char **av);
@@ -59,7 +69,7 @@ int			check_death(t_philo *think);
 int			check_eating(t_philo *think);
 int			check_finish(t_philo *think);
 void		del_malloc(t_data *data);
-void		display_status(char *status, t_philo *think);
+void		display_status(int status, t_philo *think);
 int			do_1th(t_data *data);
 int			do_multiple_thinkers(t_data *data);
 void		eat(t_philo *think);
@@ -67,8 +77,7 @@ int			ft_atoi(const char *nptr);
 size_t		ft_strlen(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		*get_ataraxia(void *arg);
-void		*monitor(void *arg);
-uint64_t	get_time(void);
+uint64_t	get_time();
 int			go_sleep(useconds_t time);
 int			init_data(t_data *data, int ac, char **av);
 void		search_for_truth(t_philo *think);

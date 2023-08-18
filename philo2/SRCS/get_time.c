@@ -6,13 +6,13 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:14 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/16 11:47:17 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 14:57:15 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-uint64_t	get_time(void)
+uint64_t	get_time()
 {
 	struct timeval	tv;
 

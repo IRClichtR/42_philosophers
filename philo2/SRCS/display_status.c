@@ -6,29 +6,45 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:44:50 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 13:06:57 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 15:40:58 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	display_status(char *status, t_philo *think)
+void	print_mutex(t_philo *think, char *str, int type_print)
 {
 	uint64_t	time;
+	static int stop = 0;
 
-	time = get_time() - think->data->start_time;
+	if (check_death(think) == 1)
+		return ;
 	pthread_mutex_lock(&think->data->write);
-	if (ft_strncmp("FORK", status, 4) == 0 && check_death(think) == 0)
-		printf("%lu %d has taken a fork\n", time, think->think_id);
-	else if (ft_strncmp("EAT", status, 3) == 0 && check_death(think) == 0)
-		printf("%lu %d is eating\n", time, think->think_id);
-	else if (ft_strncmp("SLEEP", status, 5) == 0 && check_death(think) == 0)
-		printf("%lu %d is sleeping\n", time, think->think_id);
-	else if (ft_strncmp("THINK", status, 5) == 0 && check_death(think) == 0)
-		printf("%lu %d is thinking\n", time, think->think_id);
-	else if (ft_strncmp("DEAD", status, 4) == 0)
-		printf("%lu %d died\n", time, think->think_id);
-//	else
-//		printf("[%d] I continue [%s] even if I should not\n", think->think_id, status);
+	if (stop == 1)
+	{
+		pthread_mutex_unlock(&think->data->write);
+		return;
+	}
+	time = get_time() - think->data->start_time;
+	printf(str, time, think->think_id);
+	if (type_print == DIED)
+		stop = 1;
 	pthread_mutex_unlock(&think->data->write);
+}
+
+
+void	display_status(int type_print, t_philo *think)
+{
+	if (check_death(think) == 1)
+		return ;
+	if (type_print == FORK)
+		print_mutex(think, "%lu\t%d\thas taken a fork\n", type_print);
+	else if (type_print == EAT)
+		print_mutex(think, "%lu\t%d\tis eating\n", type_print);
+	else if (type_print == SLEEP)
+		print_mutex(think, "%lu\t%d\tis sleeping\n", type_print);
+	else if (type_print == THINK)
+		print_mutex(think, "%lu\t%d\tis thinking\n", type_print);
+	else if (type_print == DIED)
+		print_mutex(think, "%lu\t%d\tdied\n", type_print);
 }

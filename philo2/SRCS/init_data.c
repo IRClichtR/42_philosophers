@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 15:10:38 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 14:40:03 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ static int	init_conditions(t_data *data, char **av, int ac)
 	pthread_mutex_init(&data->write, NULL);
 	pthread_mutex_init(&data->death_lock, NULL);
 	pthread_mutex_init(&data->finish_lock, NULL);
+	pthread_mutex_init(&data->time_lock, NULL);
 	return (0);
 }
 
