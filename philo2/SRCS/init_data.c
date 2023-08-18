@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 14:40:03 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:11:00 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	init_think(t_data *data)
 	i = 0;
 	while (i < data->think_nb)
 	{
-		data->think[i]. data = data;
+		data->think[i].data = data;
 		data->think[i].think_id = i + 1;
 		data->think[i].death_end = data->death_time;
 		data->think[i].eat_count = 0;

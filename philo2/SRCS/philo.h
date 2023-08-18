@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 14:54:42 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:30:28 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ enum type_print
 typedef struct s_philo
 {
 	struct s_data	*data;
-	pthread_t		t1;
 	int				think_id;
 	uint64_t		death_end;
 	int				eat_count;
@@ -48,6 +47,7 @@ typedef struct s_philo
 typedef struct s_data
 {
 	pthread_t		*tid;
+	pthread_t		monitor;
 	t_philo			*think;
 	int				think_nb;
 	int				round_nb;
@@ -68,6 +68,7 @@ int			check_av(char **av);
 int			check_death(t_philo *think);
 int			check_eating(t_philo *think);
 int			check_finish(t_philo *think);
+void    	*death_watch(void *arg);
 void		del_malloc(t_data *data);
 void		display_status(int status, t_philo *think);
 int			do_1th(t_data *data);
