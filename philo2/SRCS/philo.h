@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 10:29:46 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/18 10:01:25 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_philo
 	int				eating;
 	int				status;
 	pthread_mutex_t	lock;
+	pthread_mutex_t	eat_lock;
 	pthread_mutex_t	*l_chop;
 	pthread_mutex_t	*r_chop;
 }				t_philo;
@@ -49,13 +50,13 @@ typedef struct s_data
 	int				finish;
 	pthread_mutex_t	*chopstick;
 	pthread_mutex_t	write;
-	pthread_mutex_t	lock;
 	pthread_mutex_t	death_lock;
 	pthread_mutex_t	finish_lock;
 }				t_data;
 
 int			check_av(char **av);
 int			check_death(t_philo *think);
+int			check_eating(t_philo *think);
 int			check_finish(t_philo *think);
 void		del_malloc(t_data *data);
 void		display_status(char *status, t_philo *think);
@@ -72,4 +73,6 @@ int			go_sleep(useconds_t time);
 int			init_data(t_data *data, int ac, char **av);
 void		search_for_truth(t_philo *think);
 int			str_error(char *str, t_data *data);
+void		write_death(t_philo *think);
+void		write_finish(t_philo *think);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 10:30:17 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/17 15:10:38 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	init_think(t_data *data)
 		data->think[i].eating = 0;
 		data->think[i].status = 0;
 		pthread_mutex_init(&data->think[i].lock, NULL);
+		pthread_mutex_init(&data->think[i].eat_lock, NULL);
 		i++;
 	}
 }
@@ -80,7 +81,6 @@ static int	init_conditions(t_data *data, char **av, int ac)
 	data->waisted = 0;
 	data->finish = 0;
 	pthread_mutex_init(&data->write, NULL);
-	pthread_mutex_init(&data->lock, NULL);
 	pthread_mutex_init(&data->death_lock, NULL);
 	pthread_mutex_init(&data->finish_lock, NULL);
 	return (0);
