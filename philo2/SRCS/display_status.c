@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:44:50 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 15:40:58 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/21 13:18:49 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_mutex(t_philo *think, char *str, int type_print)
 {
 	uint64_t	time;
-	static int stop = 0;
+	static int	stop = 0;
 
 	if (check_death(think) == 1)
 		return ;
@@ -23,7 +23,7 @@ void	print_mutex(t_philo *think, char *str, int type_print)
 	if (stop == 1)
 	{
 		pthread_mutex_unlock(&think->data->write);
-		return;
+		return ;
 	}
 	time = get_time() - think->data->start_time;
 	printf(str, time, think->think_id);
@@ -31,7 +31,6 @@ void	print_mutex(t_philo *think, char *str, int type_print)
 		stop = 1;
 	pthread_mutex_unlock(&think->data->write);
 }
-
 
 void	display_status(int type_print, t_philo *think)
 {

@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:46:05 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/21 11:54:26 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/21 17:17:13 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,13 @@ void	eat(t_philo *think)
 		think->eating = 1;
 		pthread_mutex_unlock(&think->eat_lock);
 		display_status(EAT, think);
-		think->death_end = get_time(think->data) + think->data->death_time;
-		go_sleep(think->data->eat_time);
+		think->death_end = get_time() + think->data->death_time;
+		if (think->data->eat_time + (think->data->sleep_time >
+			think->data->think->data->eat_time ? think->data->sleep_time :
+				think->data->eat_time) < think->death_end)
+			go_sleep(think->death_end - get_time());
+		else
+			go_sleep(think->data->eat_time);
 		pthread_mutex_lock(&think->eat_lock);
 		think->eating = 0;
 		pthread_mutex_unlock(&think->eat_lock);
@@ -57,3 +62,4 @@ void	eat(t_philo *think)
 		unlock_chopsticks(think);
 	}
 }
+//printf("think->data->eat_time == %lu || think->death_end - get_time() == %lu\n", think->data->eat_time, think->death_end - get_time());

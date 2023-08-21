@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:21 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/21 12:35:44 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:09:25 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int ac, char **av)
 	}
 	if (init_data(&data, ac, av) != 0)
 		return (1);
+printf("death_time = %lu, eat_time = %lu, sleep_time = %lu\n", data.death_time, data.eat_time, data.sleep_time);
 	if (data.think_nb == 1)
 		return (do_1th(&data));
 	if (do_multiple_thinkers(&data) != 0)
