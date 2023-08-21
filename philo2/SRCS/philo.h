@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 16:30:28 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:40:38 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ typedef struct s_data
 	pthread_mutex_t	time_lock;
 }				t_data;
 
-int			check_av(char **av);
 int			check_death(t_philo *think);
 int			check_eating(t_philo *think);
 int			check_finish(t_philo *think);
+int			check_num(char **arg_chain);
 void    	*death_watch(void *arg);
 void		del_malloc(t_data *data);
 void		display_status(int status, t_philo *think);
@@ -75,8 +75,11 @@ int			do_1th(t_data *data);
 int			do_multiple_thinkers(t_data *data);
 void		eat(t_philo *think);
 int			ft_atoi(const char *nptr);
+int			ft_isdigit(int c);
+char		*ft_strdup(const char *s);
 size_t		ft_strlen(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		*get_ataraxia(void *arg);
 uint64_t	get_time();
 int			go_sleep(useconds_t time);

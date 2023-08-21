@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 16:11:00 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:18:34 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,15 @@ static void	fork_init(t_data *data)
 		i++;
 	}
 	data->think[0].l_chop = &data->chopstick[0];
-	data->think[0].r_chop = &data->chopstick[data->think_nb - 1];
-	i = 0;
-	while (++i < data->think_nb)
+	if (data->think_nb > 1)
 	{
-		data->think[i].l_chop = &data->chopstick[i];
-		data->think[i].r_chop = &data->chopstick[i - 1];
+		data->think[0].r_chop = &data->chopstick[data->think_nb - 1];
+		i = 0;
+		while (++i < data->think_nb)
+		{
+			data->think[i].l_chop = &data->chopstick[i];
+			data->think[i].r_chop = &data->chopstick[i - 1];
+		}
 	}
 }
 

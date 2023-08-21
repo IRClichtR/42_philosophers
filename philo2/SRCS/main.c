@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:21 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/16 11:48:23 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:35:44 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 {
 	t_data	data;
 
-	if (ac < 5 || ac > 6 || check_av(av) != 0)
+	if (ac < 5 || ac > 6 || check_num(av) != 0)
 	{
 		printf("Error: arguments error\n");
 		display_usage();
