@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:03 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/23 20:39:28 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/23 20:56:46 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	*death_watch(void *arg)
 	t_philo	*think;
 
 	think = (t_philo *)arg;
+	usleep(1000);
+	pthread_mutex_lock(&think->data->release);
+	pthread_mutex_unlock(&think->data->release);
 	while (1)
 	{
 		if (check_death(think) == 1)
@@ -50,9 +53,9 @@ void	*get_ataraxia(void *arg)
 	t_philo		*think;
 
 	think = (t_philo *)arg;
-//	pthread_mutex_lock(&think->data->release);
+	pthread_mutex_lock(&think->data->release);
+	pthread_mutex_unlock(&think->data->release);
 	think->death_end = think->data->death_time + get_time();
-//	pthread_mutex_unlock(&think->data->release);
 	while (1)
 	{
 		if (check_death(think) == 1 || check_finish(think) == 1
