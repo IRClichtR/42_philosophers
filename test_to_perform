@@ -5,5 +5,5 @@ ou valgrind -tools=helgrind chercher data race
 5 800 200 200 7
 5 800 200 200
 3 620 200 200
-2 410 200 200
+4 310 200 100 --> should stop
 2 410 200 200
