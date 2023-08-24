@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:48:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/23 20:17:33 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 09:46:02 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ enum e_typeprint
 enum e_chopstick
 {
 	LEFT = 1,
-	RIGHT = 2
+	RIGHT = 2,
+	TAKE = 3,
+	LEAVE = 4
 };
 
 typedef struct s_philo
@@ -95,7 +97,7 @@ void		*get_ataraxia(void *arg);
 uint64_t	get_time(void);
 int			go_sleep(useconds_t time);
 int			init_data(t_data *data, int ac, char **av);
-void		mod_chop_status(t_philo *think, int chopstick);
+void		mod_chop_status(t_philo *think, int chopstick, int action);
 void		search_for_truth(t_philo *think);
 int			str_error(char *str, t_data *data);
 void		write_death(t_philo *think);

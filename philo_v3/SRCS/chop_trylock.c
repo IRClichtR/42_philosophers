@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:58:43 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/24 09:35:03 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 09:57:09 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,34 @@ int	chop_trylock(t_philo *think)
 {
 	if (check_chop(think, RIGHT) == 0 && check_chop(think, LEFT) == 0)
 	{
-		if (think->data->think_nb % 2 != 0)
-		{
+//		if (think->data->think_nb % 2 != 0)
+//		{
 			if (think->think_id % 2 == 0)
 			{
-				mod_chop_status(think, RIGHT);
-				mod_chop_status(think, LEFT);
+				mod_chop_status(think, RIGHT, TAKE);
+				mod_chop_status(think, LEFT, TAKE);
 			}
 			else
 			{
-				mod_chop_status(think, LEFT);
-				mod_chop_status(think, RIGHT);
+				mod_chop_status(think, LEFT, TAKE);
+				mod_chop_status(think, RIGHT, TAKE);
 			}
-		}
+//		}
+/*
 		else
 		{
 			if (think->think_id < think->data->think_nb)
 			{
-				mod_chop_status(think, RIGHT);
-				mod_chop_status(think, LEFT);
+				mod_chop_status(think, RIGHT, TAKE);
+				mod_chop_status(think, LEFT, TAKE);
 			}
 			else
 			{
-				mod_chop_status(think, LEFT);
-				mod_chop_status(think, RIGHT);
+				mod_chop_status(think, LEFT, TAKE);
+				mod_chop_status(think, RIGHT, TAKE);
 			}
 		}
-
+*/
 	}
 	else
 		return (0);

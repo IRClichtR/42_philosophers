@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:46:05 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/24 09:22:11 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 09:44:59 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ printf("coucou eat_time\n");
 			go_sleep(think->data->eat_time);
 		}
 		think->eat_count += 1;
-		mod_chop_status(think, LEFT);
-		mod_chop_status(think, RIGHT);
+		mod_chop_status(think, LEFT, LEAVE);
+		mod_chop_status(think, RIGHT, LEAVE);
 		search_for_truth(think);
 		pthread_mutex_unlock(&think->lock);
 	}
