@@ -7,3 +7,8 @@ ou valgrind -tools=helgrind chercher data race
 3 620 200 200
 4 310 200 100 --> should stop
 2 410 200 200
+
+
+choisir entre pair impair commence a 0
+le restant sans le dernier si c'est impair commence a fin de time to eat
+le dernier commence usleep(100) apres le debut du deuxieme service
