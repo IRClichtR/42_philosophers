@@ -1,0 +1,178 @@
+3 1 has taken a fork
+3 1 has taken a fork
+3 1 is eating
+5 3 has taken a fork
+5 3 has taken a fork
+5 3 is eating
+203 5 has taken a fork
+203 1 is sleeping
+203 5 has taken a fork
+203 5 is eating
+205 3 is sleeping
+205 2 has taken a fork
+205 2 has taken a fork
+205 2 is eating
+403 1 is thinking
+403 5 is sleeping
+403 4 has taken a fork
+403 4 has taken a fork
+403 4 is eating
+405 2 is sleeping
+405 1 has taken a fork
+405 1 has taken a fork
+405 1 is eating
+405 3 is thinking
+603 5 is thinking
+603 4 is sleeping
+603 3 has taken a fork
+603 3 has taken a fork
+603 3 is eating
+605 1 is sleeping
+605 5 has taken a fork
+605 5 has taken a fork
+605 5 is eating
+605 2 is thinking
+803 3 is sleeping
+803 2 has taken a fork
+803 4 is thinking
+803 2 has taken a fork
+803 2 is eating
+805 4 has taken a fork
+805 5 is sleeping
+805 4 has taken a fork
+805 4 is eating
+805 1 is thinking
+1003 1 has taken a fork
+1003 2 is sleeping
+1003 1 has taken a fork
+1003 1 is eating
+1003 3 is thinking
+1005 5 is thinking
+1005 4 is sleeping
+1005 3 has taken a fork
+1005 3 has taken a fork
+1005 3 is eating
+1203 2 is thinking
+1203 1 is sleeping
+1203 5 has taken a fork
+1203 5 has taken a fork
+1203 5 is eating
+1205 3 is sleeping
+1205 2 has taken a fork
+1205 4 is thinking
+1205 2 has taken a fork
+1205 2 is eating
+1403 4 has taken a fork
+1403 5 is sleeping
+1403 4 has taken a fork
+1403 4 is eating
+1403 1 is thinking
+1405 1 has taken a fork
+1405 3 is thinking
+1405 1 has taken a fork
+1405 2 is sleeping
+1405 1 is eating
+1603 4 is sleeping
+1603 3 has taken a fork
+1603 3 has taken a fork
+1603 3 is eating
+1603 5 is thinking
+1605 2 is thinking
+1605 1 is sleeping
+1605 5 has taken a fork
+1605 5 has taken a fork
+1605 5 is eating
+1803 4 is thinking
+1803 3 is sleeping
+1803 2 has taken a fork
+1803 2 has taken a fork
+1803 2 is eating
+1805 1 is thinking
+1805 4 has taken a fork
+1805 5 is sleeping
+1805 4 has taken a fork
+1805 4 is eating
+2003 1 has taken a fork
+2003 1 has taken a fork
+2003 3 is thinking
+2003 2 is sleeping
+2003 1 is eating
+2005 4 is sleeping
+2005 5 is thinking
+2005 3 has taken a fork
+2005 3 has taken a fork
+2005 3 is eating
+2203 2 is thinking
+2203 1 is sleeping
+2203 5 has taken a fork
+2203 5 has taken a fork
+2203 5 is eating
+2205 4 is thinking
+2205 2 has taken a fork
+2205 3 is sleeping
+2205 2 has taken a fork
+2205 2 is eating
+2403 1 is thinking
+2403 5 is sleeping
+2403 4 has taken a fork
+2403 4 has taken a fork
+2403 4 is eating
+2405 1 has taken a fork
+2405 3 is thinking
+2405 1 has taken a fork
+2405 2 is sleeping
+2405 1 is eating
+2603 4 is sleeping
+2603 3 has taken a fork
+2603 3 has taken a fork
+2603 3 is eating
+2603 5 is thinking
+2605 5 has taken a fork
+2605 2 is thinking
+2605 5 has taken a fork
+2605 1 is sleeping
+2605 5 is eating
+2803 3 is sleeping
+2803 2 has taken a fork
+2803 2 has taken a fork
+2803 4 is thinking
+2803 2 is eating
+2805 1 is thinking
+2805 4 has taken a fork
+2805 5 is sleeping
+2805 4 has taken a fork
+2805 4 is eating
+3003 3 is thinking
+3003 1 has taken a fork
+3003 2 is sleeping
+3003 1 has taken a fork
+3003 1 is eating
+3005 3 has taken a fork
+3005 4 is sleeping
+3005 3 has taken a fork
+3005 3 is eating
+3005 5 is thinking
+3203 5 has taken a fork
+3203 2 is thinking
+3203 5 has taken a fork
+3203 1 is sleeping
+3203 5 is eating
+3205 4 is thinking
+3205 3 is sleeping
+3205 2 has taken a fork
+3205 2 has taken a fork
+3205 2 is eating
+3403 5 is sleeping
+3403 1 is thinking
+3403 4 has taken a fork
+3403 4 has taken a fork
+3403 4 is eating
+finish trigger
+finish trigger
+finish trigger
+finish trigger
+finish trigger
+finish trigger
+finish trigger
+----END OF ROUNDS----
+-----GAME OVER-----
