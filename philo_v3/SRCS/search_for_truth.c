@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:49:09 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/23 19:19:20 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 09:21:06 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@ void	search_for_truth(t_philo *think)
 		return ;
 	display_status(SLEEP, think);
 	if (check_time(get_time() + think->data->sleep_time, think->death_end) == -1)
+	{
+printf("coucou sleep_time\n");
 		go_sleep(think->death_end - get_time());
+	}
 	else
+	{
 		go_sleep(think->data->sleep_time);
+	}
 }

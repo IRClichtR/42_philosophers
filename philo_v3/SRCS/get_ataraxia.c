@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:03 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/23 21:35:09 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 09:32:55 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ static int	times_up(t_philo *think)
 	}
 	if (think->data->round_nb > 0 &&
 		think->eat_count >= think->data->round_nb)
+	{
+printf("finish trigger\n");
 		write_finish(think);
+	}
 	pthread_mutex_unlock(&think->lock);
 	return (0);
 }
