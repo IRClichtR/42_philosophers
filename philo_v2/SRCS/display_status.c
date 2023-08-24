@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:44:50 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/21 13:18:49 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:14:50 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	display_status(int type_print, t_philo *think)
 	if (check_death(think) == 1)
 		return ;
 	if (type_print == FORK)
-		print_mutex(think, "%lu\t%d\thas taken a fork\n", type_print);
+		print_mutex(think, "%lu %d has taken a fork\n", type_print);
 	else if (type_print == EAT)
-		print_mutex(think, "%lu\t%d\tis eating\n", type_print);
+		print_mutex(think, "%lu %d is eating\n", type_print);
 	else if (type_print == SLEEP)
-		print_mutex(think, "%lu\t%d\tis sleeping\n", type_print);
+		print_mutex(think, "%lu %d is sleeping\n", type_print);
 	else if (type_print == THINK)
-		print_mutex(think, "%lu\t%d\tis thinking\n", type_print);
+		print_mutex(think, "%lu %d is thinking\n", type_print);
 	else if (type_print == DIED)
-		print_mutex(think, "%lu\t%d\tdied\n", type_print);
+		print_mutex(think, "%lu %d died\n", type_print);
 }
