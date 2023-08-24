@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:45:14 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/17 15:05:07 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:26:51 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	del_malloc(t_data *data)
 	while (i < data->think_nb)
 	{
 		pthread_mutex_destroy(&data->think[i].lock);
-		pthread_mutex_destroy(&data->think[i].eat_lock);
 		pthread_mutex_destroy(&data->chopstick[i]);
 		i++;
 	}

@@ -7,6 +7,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 200_150_60_60.txt; then
 	echo -e "\033[0;31m200 150 60 60 -- FAILED!\033[0m"
@@ -19,6 +21,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 4_410_200_200.txt; then
 	echo -e "\033[0;31m4 410 200 200 -- FAILED!\033[0m"
@@ -31,6 +35,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 5_800_200_200_7.txt; then
 	echo -e "\033[0;31m200 150 60 60 -- FAILED (diedd)!\033[0m"
@@ -48,6 +54,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 5_800_200_200.txt; then
 	echo -e "\033[0;31m5 800 200 200 -- FAILED!\033[0m"
@@ -60,6 +68,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 3_620_200_200.txt; then
 	echo -e "\033[0;31m3 620 200 200 -- FAILED!\033[0m"
@@ -72,6 +82,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 4_310_200_100.txt; then
 	echo -e "\033[0;32m4 310 200 100 -- SUCCESS!\033[0m"
@@ -84,6 +96,8 @@ philo_pid=$!
 
 sleep 20
 
+kill -15 $philo_pid > /dev/null 2>&1
+sleep 5
 kill -9 $philo_pid
 if grep -q "died" 2_410_200_200.txt; then
 	echo -e "\033[0;31m2 410 200 200 -- FAILED!\033[0m"

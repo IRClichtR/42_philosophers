@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:03 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/24 09:32:55 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 12:27:39 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	*get_ataraxia(void *arg)
 	think = (t_philo *)arg;
 //	pthread_mutex_lock(&think->data->release);
 //	pthread_mutex_unlock(&think->data->release);
+	usleep(2000000);
 	think->death_end = think->data->death_time + get_time();
 	while (1)
 	{

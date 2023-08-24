@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:03 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/21 16:29:58 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:02:22 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,8 @@ void	*get_ataraxia(void *arg)
 	think->death_end = think->data->death_time + get_time();
 	while (1)
 	{
-//printf("------ THINK_ID = %d current time = %lu I should die at %lu------\n", think->think_id, get_time() - think->data->start_time, think->death_end - think->data->start_time);
 		pthread_mutex_lock(&think->lock);
-		if (get_time() >= think->death_end
-			&& check_eating(think) == 0 && check_death(think) == 0)
+		if (get_time() >= think->death_end && check_death(think) == 0)
 		{
 			write_death(think);
 			pthread_mutex_unlock(&think->lock);

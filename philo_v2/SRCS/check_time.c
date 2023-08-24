@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_for_truth.c                                 :+:      :+:    :+:   */
+/*   check_time.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 11:49:09 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/18 14:56:24 by ftuernal         ###   ########.fr       */
+/*   Created: 2023/08/23 15:38:34 by ftuernal          #+#    #+#             */
+/*   Updated: 2023/08/24 13:15:18 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	search_for_truth(t_philo *think)
+int	check_time(u_int64_t time, u_int64_t death_end)
 {
-	if (check_death(think) == 1)
-		return ;
-	display_status(SLEEP, think);
-	go_sleep(think->data->sleep_time);
+	if (time >= death_end)
+		return (-1);
+	else
+		return (0);
 }

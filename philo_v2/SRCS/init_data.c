@@ -6,7 +6,7 @@
 /*   By: ftuernal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:47:51 by ftuernal          #+#    #+#             */
-/*   Updated: 2023/08/21 12:18:34 by ftuernal         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:07:19 by ftuernal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,8 @@ static void	init_think(t_data *data)
 		data->think[i].think_id = i + 1;
 		data->think[i].death_end = data->death_time;
 		data->think[i].eat_count = 0;
-		data->think[i].eating = 0;
 		data->think[i].status = 0;
 		pthread_mutex_init(&data->think[i].lock, NULL);
-		pthread_mutex_init(&data->think[i].eat_lock, NULL);
 		i++;
 	}
 }

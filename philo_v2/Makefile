@@ -2,7 +2,7 @@ NAME		= philo
 
 SRCS		= $(addprefix SRCS/, \
 check_death.c     do_multiple_thinkers.c  ft_substr.c     search_for_truth.c \
-check_eating.c    eat.c                   get_ataraxia.c  str_error.c \
+check_time.c      eat.c                   get_ataraxia.c  str_error.c \
 check_finish.c    ft_atoi.c               get_time.c      write_death.c \
 check_num.c       ft_isdigit.c            go_sleep.c      write_finish.c \
 del_malloc.c      ft_strdup.c             init_data.c \
